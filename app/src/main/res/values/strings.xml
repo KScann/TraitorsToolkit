@@ -1,0 +1,192 @@
+<resources>
+    <string name="app_name">Traitor\'s Toolkit</string>
+
+    <!--Layout Values-->
+    <string name="zero">0</string>
+    <string name="name">Name:</string>
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
+    <string name="age">Age:</string>
+    <string name="birthday">Birthday:</string>
+    <string name="hobbies">Hobbies:</string>
+
+    <!-- Characters -->
+
+    <!-- Vivian Lopez -->
+    <string name="vl_name">Vivian Lopez</string>
+    <string name="vl_age">42</string>
+    <string name="vl_height">5\'5"</string>
+    <string name="vl_weight">142 lbs.</string>
+    <string name="vl_hobbies">Old Movies, Horses</string>
+    <string name="vl_birthday">January 11th</string>
+    <string name="vl_speed">3,4,4,4,4,6,7,8</string>
+    <string name="vl_might">2,2,2,4,4,5,6,6</string>
+    <string name="vl_sanity">4,4,4,5,6,7,8,8</string>
+    <string name="vl_knowledge">4,5,5,5,5,6,6,7</string>
+    <string name="vl_basestats">3,2,2,3</string>
+    <string name="vl_color">Blue</string>
+
+    <!-- Missy Dubourde -->
+    <string name="md_name">Missy Dubourde</string>
+    <string name="md_age">9</string>
+    <string name="md_height">4\'2"</string>
+    <string name="md_weight">62 lbs.</string>
+    <string name="md_hobbies">Swimming, Medicine</string>
+    <string name="md_birthday">February 14th</string>
+    <string name="md_speed">3,4,5,6,6,6,7,7</string>
+    <string name="md_might">2,3,3,3,4,5,6,7</string>
+    <string name="md_sanity">1,2,3,4,5,5,6,7</string>
+    <string name="md_knowledge">2,3,4,4,5,6,6,6</string>
+    <string name="md_basestats">2,3,2,3</string>
+    <string name="md_color">Orange</string>
+
+    <!-- Jenny LeClerc -->
+    <string name="jl_name">Jenny LeClerc</string>
+    <string name="jl_age">21</string>
+    <string name="jl_height">5\'7"</string>
+    <string name="jl_weight">142 lbs.</string>
+    <string name="jl_hobbies">Reading, Soccer</string>
+    <string name="jl_birthday">March 4th</string>
+    <string name="jl_speed">2,3,4,4,4,5,6,8</string>
+    <string name="jl_might">3,4,4,4,4,5,6,8</string>
+    <string name="jl_sanity">1,1,2,4,4,4,5,6</string>
+    <string name="jl_knowledge">2,3,3,4,4,5,6,8</string>
+    <string name="jl_basestats">3,2,4,2</string>
+    <string name="jl_color">Purple</string>
+
+    <!-- Father Rhinehardt -->
+    <string name="fr_name">Father Rhinehardt</string>
+    <string name="fr_age">62</string>
+    <string name="fr_height">5\'9"</string>
+    <string name="fr_weight">185 lbs.</string>
+    <string name="fr_hobbies">Fencing, Gardening</string>
+    <string name="fr_birthday">April 29th</string>
+    <string name="fr_speed">2,3,3,4,5,6,7,7</string>
+    <string name="fr_might">1,2,2,4,4,5,5,7</string>
+    <string name="fr_sanity">3,4,5,5,6,7,7,8</string>
+    <string name="fr_knowledge">1,3,3,4,5,6,6,8</string>
+    <string name="fr_basestats">2,2,4,3</string>
+    <string name="fr_color">White</string>
+
+    <!-- Brandon Jaspers -->
+    <string name="bj_name">Brandon Jaspers</string>
+    <string name="bj_age">12</string>
+    <string name="bj_height">5\'1"</string>
+    <string name="bj_weight">109 lbs.</string>
+    <string name="bj_hobbies">Computers, Camping, Hockey</string>
+    <string name="bj_birthday">May 21st</string>
+    <string name="bj_speed">3,4,4,4,5,6,7,8</string>
+    <string name="bj_might">2,3,3,4,5,6,6,7</string>
+    <string name="bj_sanity">3,3,3,4,5,6,7,8</string>
+    <string name="bj_knowledge">1,3,3,5,5,6,6,7</string>
+    <string name="bj_basestats">2,3,3,2</string>
+    <string name="bj_color">Green</string>
+
+    <!-- Darren Williams -->
+    <string name="dw_name">Darrin "Flash" Williams</string>
+    <string name="dw_age">20</string>
+    <string name="dw_height">5\'11"</string>
+    <string name="dw_weight">188 lbs.</string>
+    <string name="dw_hobbies">Track, Music, Shakespearean Literature</string>
+    <string name="dw_birthday">June 6th</string>
+    <string name="dw_speed">4,4,4,5,6,7,7,8</string>
+    <string name="dw_might">2,3,3,4,5,6,6,7</string>
+    <string name="dw_sanity">1,2,3,4,5,5,5,7</string>
+    <string name="dw_knowledge">2,3,3,4,5,5,5,7</string>
+    <string name="dw_basestats">4,2,2,2</string>
+    <string name="dw_color">Red</string>
+
+    <!-- Professor Longfellow -->
+    <string name="pl_name">Professor Longfellow</string>
+    <string name="pl_age">57</string>
+    <string name="pl_height">5\'11"</string>
+    <string name="pl_weight">153 lbs.</string>
+    <string name="pl_hobbies">Gaelic Music, Drama, Fine Wines</string>
+    <string name="pl_birthday">July 27th</string>
+    <string name="pl_speed">2,2,4,4,5,5,6,6</string>
+    <string name="pl_might">1,2,3,4,5,5,6,6</string>
+    <string name="pl_sanity">1,3,3,4,5,5,6,7</string>
+    <string name="pl_knowledge">4,5,5,5,5,6,7,8</string>
+    <string name="pl_basestats">3,2,2,4</string>
+    <string name="pl_color">White</string>
+
+    <!-- Heather Granville -->
+    <string name="hg_name">Heather Granville</string>
+    <string name="hg_age">18</string>
+    <string name="hg_height">5\'2"</string>
+    <string name="hg_weight">120 lbs.</string>
+    <string name="hg_hobbies">Television, Shopping</string>
+    <string name="hg_birthday">August 2nd</string>
+    <string name="hg_speed">3,3,4,5,6,6,7,8</string>
+    <string name="hg_might">3,3,3,4,5,6,7,8</string>
+    <string name="hg_sanity">3,3,3,4,5,6,6,6</string>
+    <string name="hg_knowledge">2,3,3,4,5,6,7,8</string>
+    <string name="hg_basestats">2,2,2,4</string>
+    <string name="hg_color">Purple</string>
+
+    <!-- Peter Akimoto -->
+    <string name="pa_name">Peter Akimoto</string>
+    <string name="pa_age">13</string>
+    <string name="pa_height">4\'11"</string>
+    <string name="pa_weight">98 lbs.</string>
+    <string name="pa_hobbies">Bugs, Basketball</string>
+    <string name="pa_birthday">September 3rd</string>
+    <string name="pa_speed">3,3,3,4,6,6,7,7</string>
+    <string name="pa_might">2,3,3,4,5,5,6,8</string>
+    <string name="pa_sanity">3,4,4,4,5,6,6,7</string>
+    <string name="pa_knowledge">3,4,4,5,6,7,7,8</string>
+    <string name="pa_basestats">3,2,3,2</string>
+    <string name="pa_color">Green</string>
+
+    <!-- Ox Bellows -->
+    <string name="ob_name">Ox Bellows</string>
+    <string name="ob_age">23</string>
+    <string name="ob_height">6\'4"</string>
+    <string name="ob_weight">288 lbs.</string>
+    <string name="ob_hobbies">Football, Shiny Objects</string>
+    <string name="ob_birthday">October 18th</string>
+    <string name="ob_speed">2,2,2,3,4,5,5,6</string>
+    <string name="ob_might">4,5,5,6,6,7,8,8</string>
+    <string name="ob_sanity">2,2,3,4,5,5,6,7</string>
+    <string name="ob_knowledge">2,2,3,3,5,5,6,6</string>
+    <string name="ob_basestats">4,2,2,2</string>
+    <string name="ob_color">Red</string>
+
+    <!-- Zoe Ingstrom -->
+    <string name="zi_name">Zoe Ingstrom</string>
+    <string name="zi_age">8</string>
+    <string name="zi_height">3\'9"</string>
+    <string name="zi_weight">49 lbs.</string>
+    <string name="zi_hobbies">Dolls, Music</string>
+    <string name="zi_birthday">November 5th</string>
+    <string name="zi_speed">4,4,4,4,5,6,8,8</string>
+    <string name="zi_might">2,2,3,3,4,4,6,7</string>
+    <string name="zi_sanity">3,4,5,5,6,6,7,8</string>
+    <string name="zi_knowledge">1,2,3,4,4,5,5,5</string>
+    <string name="zi_basestats">3,3,2,2</string>
+    <string name="zi_color">Orange</string>
+
+    <!-- Madame Zostra -->
+    <string name="mz_name">Madame Zostra</string>
+    <string name="mz_age">37</string>
+    <string name="mz_height">5\'0"</string>
+    <string name="mz_weight">150 lbs.</string>
+    <string name="mz_hobbies">Astrology, Cooking, Baseball</string>
+    <string name="mz_birthday">December 10th</string>
+    <string name="mz_speed">2,3,3,5,5,6,6,7</string>
+    <string name="mz_might">2,3,3,4,5,5,5,6</string>
+    <string name="mz_sanity">4,4,4,5,6,7,8,8</string>
+    <string name="mz_knowledge">1,3,4,4,4,5,6,6</string>
+    <string name="mz_basestats">2,3,2,3</string>
+    <string name="mz_color">Blue</string>
+
+    <!--ITEMS-->
+    <string name="amulet">AMULET OF THE AGES</string>
+    <string name="bell">BELL</string>
+    <string name="book">BOOK</string>
+    <string name="dog">DOG</string>
+    <string name="girl">GIRL</string>
+    <string name="symbol">HOLY SYMBOL</string>
+    <string name="locket">LOCKET</string>
+    <string name="madman">MADMAN</string>
+</resources>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_character_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    tools:context=".CharacterActivity">
+
+    <ImageView
+        android:id="@+id/img_character_view_portrait"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/default_portrait"
+        android:onClick="manualReset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/tv_cv_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/img_character_view_portrait"
+        app:layout_constraintTop_toBottomOf="@+id/img_character_view_portrait" />
+
+    <ImageButton
+        android:id="@+id/btn_cv_speed_up"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/statup"
+        android:onClick="speedUp"
+        app:layout_constraintRight_toLeftOf="@id/tv_cv_speed"
+        app:layout_constraintBottom_toTopOf="@id/tv_cv_speed"/>
+
+    <ImageButton
+        android:id="@+id/btn_cv_speed_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/statdown"
+        android:onClick="speedDown"
+        app:layout_constraintLeft_toRightOf="@id/tv_cv_speed"
+        app:layout_constraintTop_toBottomOf="@id/tv_cv_speed"
+        app:layout_constraintBottom_toTopOf="@+id/ll_cv_overview"/>
+
+    <ImageView
+        android:id="@+id/img_cv_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/health_brtl_base"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cv_speed"
+        app:layout_constraintLeft_toLeftOf="@id/tv_cv_speed" />
+
+    <TextView
+        android:id="@+id/tv_cv_might"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/img_character_view_portrait"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/img_character_view_portrait"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_cv_might"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/health_bltr_base"
+        app:layout_constraintLeft_toLeftOf="@id/tv_cv_might"
+        app:layout_constraintTop_toTopOf="@id/tv_cv_might" />
+
+    <ImageButton
+        android:id="@+id/btn_cv_might_up"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/statup"
+        android:onClick="mightUp"
+        app:layout_constraintLeft_toRightOf="@id/tv_cv_might"
+        app:layout_constraintBottom_toTopOf="@id/tv_cv_might"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btn_cv_might_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/statdown"
+        android:onClick="mightDown"
+        app:layout_constraintRight_toLeftOf="@id/tv_cv_might"
+        app:layout_constraintTop_toBottomOf="@id/tv_cv_might"
+        app:layout_constraintBottom_toTopOf="@id/img_character_view_portrait"/>
+
+    <TextView
+        android:id="@+id/tv_cv_sanity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/img_character_view_portrait"
+        app:layout_constraintLeft_toRightOf="@id/img_character_view_portrait"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_cv_sanity_up"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/statup"
+        android:onClick="sanityUp"
+        app:layout_constraintRight_toLeftOf="@id/tv_cv_sanity"
+        app:layout_constraintBottom_toTopOf="@id/tv_cv_sanity"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/img_cv_sanity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/health_brtl_base"
+        app:layout_constraintRight_toRightOf="@id/tv_cv_sanity"
+        app:layout_constraintTop_toTopOf="@id/tv_cv_sanity" />
+
+    <ImageButton
+        android:id="@+id/btn_cv_sanity_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/statdown"
+        android:onClick="sanityDown"
+        app:layout_constraintLeft_toRightOf="@id/tv_cv_sanity"
+        app:layout_constraintTop_toBottomOf="@id/tv_cv_sanity"
+        app:layout_constraintBottom_toTopOf="@id/img_character_view_portrait"/>
+
+    <TextView
+        android:id="@+id/tv_cv_knowledge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/img_character_view_portrait"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_character_view_portrait" />
+
+    <ImageView
+        android:id="@+id/img_cv_knowledge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/health_bltr_base"
+        app:layout_constraintBottom_toBottomOf="@id/tv_cv_knowledge"
+        app:layout_constraintRight_toRightOf="@id/tv_cv_knowledge" />
+
+    <ImageButton
+        android:id="@+id/btn_cv_knowledge_up"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:onClick="knowledgeUp"
+        android:background="@drawable/statup"
+        app:layout_constraintLeft_toRightOf="@id/tv_cv_knowledge"
+        app:layout_constraintBottom_toTopOf="@id/tv_cv_knowledge"/>
+
+    <ImageButton
+        android:id="@+id/btn_cv_knowledge_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/statdown"
+        android:onClick="knowledgeDown"
+        app:layout_constraintRight_toLeftOf="@id/tv_cv_knowledge"
+        app:layout_constraintTop_toBottomOf="@id/tv_cv_knowledge"
+        app:layout_constraintBottom_toTopOf="@+id/ll_cv_overview"/>
+
+    <LinearLayout
+        android:id="@+id/ll_cv_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_cv_speed"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_cv_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_rect"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_cv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cv_age"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/zero"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cv_height"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/height"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/weight"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cv_hobbies"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/hobbies"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cv_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
+                android:text="@string/birthday"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cv_items"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_rect"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cv_amulet"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleAmulet"
+                    android:text="@string/amulet" />
+
+                <Button
+                    android:id="@+id/btn_cv_bell"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleBell"
+                    android:text="@string/bell" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cv_book"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleBook"
+                    android:text="@string/book" />
+
+                <Button
+                    android:id="@+id/btn_cv_dog"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleDog"
+                    android:text="@string/dog" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cv_girl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleGirl"
+                    android:text="@string/girl" />
+
+                <Button
+                    android:id="@+id/btn_cv_symbol"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleSymbol"
+                    android:text="@string/symbol" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_cv_locket"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleLocket"
+                    android:text="@string/locket" />
+
+                <Button
+                    android:id="@+id/btn_cv_madman"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="toggleMadman"
+                    android:text="@string/madman" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

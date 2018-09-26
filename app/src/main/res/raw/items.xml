@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stat-items>
+    <item id="amulet">
+        <name>AMULET OF THE AGES</name>
+        <type>1</type>
+        <gain>
+            <speed>1</speed>
+            <might>1</might>
+            <sanity>1</sanity>
+            <knowledge>1</knowledge>
+        </gain>
+        <lose>
+            <speed>-3</speed>
+            <might>-3</might>
+            <sanity>-3</sanity>
+            <knowledge>-3</knowledge>
+        </lose>
+    </item>
+    <item id="bell">
+        <name>BELL</name>
+        <type>1</type>
+        <gain>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>1</sanity>
+            <knowledge>0</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>-1</sanity>
+            <knowledge>0</knowledge>
+        </lose>
+    </item>
+    <item id="book">
+        <name>BOOK</name>
+        <type>2</type>
+        <gain>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>0</sanity>
+            <knowledge>2</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>0</sanity>
+            <knowledge>-2</knowledge>
+        </lose>
+    </item>
+    <item id="dog">
+        <name>DOG</name>
+        <type>2</type>
+        <gain>
+            <speed>0</speed>
+            <might>1</might>
+            <sanity>1</sanity>
+            <knowledge>0</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>-1</might>
+            <sanity>-1</sanity>
+            <knowledge>0</knowledge>
+        </lose>
+    </item>
+    <item id="girl">
+        <name>GIRL</name>
+        <type>2</type>
+        <gain>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>1</sanity>
+            <knowledge>1</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>-1</sanity>
+            <knowledge>-1</knowledge>
+        </lose>
+    </item>
+    <item id="symbol">
+        <name>HOLY SYMBOL</name>
+        <type>2</type>
+        <gain>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>2</sanity>
+            <knowledge>0</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>-2</sanity>
+            <knowledge>0</knowledge>
+        </lose>
+    </item>
+    <item id="locket">
+        <name>LOCKET</name>
+        <type>1</type>
+        <gain>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>1</sanity>
+            <knowledge>0</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>0</might>
+            <sanity>-1</sanity>
+            <knowledge>0</knowledge>
+        </lose>
+    </item>
+    <item id="madman">
+        <name>MADMAN</name>
+        <type>2</type>
+        <gain>
+            <speed>0</speed>
+            <might>2</might>
+            <sanity>-1</sanity>
+            <knowledge>0</knowledge>
+        </gain>
+        <lose>
+            <speed>0</speed>
+            <might>-2</might>
+            <sanity>1</sanity>
+            <knowledge>0</knowledge>
+        </lose>
+    </item>
+</stat-items>
