@@ -298,6 +298,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleAmulet"
+                    android:background="@color/itemColor"
                     android:text="@string/amulet" />
 
                 <Button
@@ -306,6 +307,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleBell"
+                    android:background="@color/itemColor"
                     android:text="@string/bell" />
             </LinearLayout>
 
@@ -321,6 +323,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleBook"
+                    android:background="@color/omenColor"
                     android:text="@string/book" />
 
                 <Button
@@ -329,6 +332,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleDog"
+                    android:background="@color/omenColor"
                     android:text="@string/dog" />
             </LinearLayout>
 
@@ -344,6 +348,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleGirl"
+                    android:background="@color/omenColor"
                     android:text="@string/girl" />
 
                 <Button
@@ -352,6 +357,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleSymbol"
+                    android:background="@color/omenColor"
                     android:text="@string/symbol" />
             </LinearLayout>
 
@@ -367,6 +373,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleLocket"
+                    android:background="@color/itemColor"
                     android:text="@string/locket" />
 
                 <Button
@@ -375,6 +382,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:onClick="toggleMadman"
+                    android:background="@color/omenColor"
                     android:text="@string/madman" />
             </LinearLayout>
         </LinearLayout>

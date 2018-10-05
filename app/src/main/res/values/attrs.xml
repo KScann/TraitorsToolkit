@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="TTImageButton">
+    <declare-styleable name="TTButton">
         <attr name="character_code" format="string" />
     </declare-styleable>
 </resources>

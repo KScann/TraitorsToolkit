@@ -1,15 +1,12 @@
 package com.kevinscannell.apps.traitorstoolkit
 
-import android.content.DialogInterface
 import android.graphics.LightingColorFilter
 import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
-import android.util.Log.i
 import android.view.View
-import com.kevinscannell.apps.traitorstoolkit.R.id.btn_cv_speed_up
-import com.kevinscannell.apps.traitorstoolkit.R.string.amulet
 import kotlinx.android.synthetic.main.activity_character.*
 import org.w3c.dom.Document
 import org.w3c.dom.Element
@@ -40,7 +37,7 @@ class CharacterActivity : AppCompatActivity() {
     private val mightArray : Array<Int?> = arrayOfNulls(8)
     private val sanityArray : Array<Int?> = arrayOfNulls(8)
     private val knowledgeArray : Array<Int?> = arrayOfNulls(8)
-    private val inventory : Array<Boolean> = Array(8, {i->false})
+    private val inventory : Array<Boolean> = Array(8){_->false}
     private val itemColor : Int = 0xFFC37E2D.toInt()
     private val omenColor : Int = 0xFF3C6024.toInt()
     private val colorMul : Int = 0xFF000000.toInt()
@@ -62,18 +59,18 @@ class CharacterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_character)
         mCharacterCode = intent.getStringExtra(CHARACTER_CODE)
         when(mCharacterCode){
-            "fr" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorBlack))
-            "pl" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorBlack))
-            "dw" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorRed))
-            "ob" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorRed))
-            "md" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorOrange))
-            "zi" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorOrange))
-            "pa" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorGreen))
-            "bj" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorGreen))
-            "vl" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorBlue))
-            "mz" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorBlue))
-            "hg" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorPurple))
-            "jl" -> cl_character_view_root.setBackgroundColor(resources.getColor(R.color.characterColorPurple))
+            "fr" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorBlack))
+            "pl" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorBlack))
+            "dw" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorRed))
+            "ob" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorRed))
+            "md" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorOrange))
+            "zi" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorOrange))
+            "pa" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorGreen))
+            "bj" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorGreen))
+            "vl" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorBlue))
+            "mz" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorBlue))
+            "hg" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorPurple))
+            "jl" -> cl_character_view_root.setBackgroundColor(ContextCompat.getColor( this, R.color.characterColorPurple))
         }
 
         //Get appropriate arrays:
@@ -119,13 +116,13 @@ class CharacterActivity : AppCompatActivity() {
         tv_cv_birthday.text = String.format("BIRTHDAY: %s", getStringResourceByName("${mCharacterCode}_birthday") )
 
         //Generate Items
-        val upArray : Array<Int> = Array(4, {i->0})
-        val downArray : Array<Int> = Array(4, {i->0})
+        val upArray : Array<Int> = Array(4){_->0}
+        val downArray : Array<Int> = Array(4){_->0}
         val itemDocument = readXml()
         val itemList : NodeList = (itemDocument.getElementsByTagName("stat-items")
                 .item(0) as Element).getElementsByTagName("item")
         for (i in 0..itemList.length - 1){
-            var itemNode = itemList.item(i)
+            val itemNode = itemList.item(i)
             if(itemNode.nodeType == Node.ELEMENT_NODE){
                 val elem = itemNode as Element
                 val itemID = elem.getAttribute("id") as String
@@ -141,7 +138,7 @@ class CharacterActivity : AppCompatActivity() {
                 downArray[1] = downNode.getElementsByTagName("might").item(0).textContent.toInt()
                 downArray[2] = downNode.getElementsByTagName("sanity").item(0).textContent.toInt()
                 downArray[3] = downNode.getElementsByTagName("knowledge").item(0).textContent.toInt()
-                val item : BetrayalStatItem = BetrayalStatItem(upArray, downArray, itemName, itemType)
+                val item = BetrayalStatItem(upArray, downArray, itemName, itemType)
                 items.put(itemID, item)
             }
         }
@@ -164,13 +161,13 @@ class CharacterActivity : AppCompatActivity() {
         isDead = true
     }
 
-    fun speedUp(view : View){
+    fun speedUp(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentSpeed < 7 && !isDead ) currentSpeed++
         tv_cv_speed.text = speedArray[currentSpeed].toString()
         img_cv_speed.setImageDrawable(getImageResourceByName("health_brtl_$currentSpeed"))
     }
 
-    fun speedDown(view : View){
+    fun speedDown(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentSpeed > 0 && !isDead ){
             currentSpeed--
         } else {
@@ -180,13 +177,13 @@ class CharacterActivity : AppCompatActivity() {
         img_cv_speed.setImageDrawable(getImageResourceByName("health_brtl_$currentSpeed"))
     }
 
-    fun mightUp(view : View){
+    fun mightUp(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentMight < 7 && !isDead ) currentMight++
         tv_cv_might.text = mightArray[currentMight].toString()
         img_cv_might.setImageDrawable(getImageResourceByName("health_bltr_$currentMight"))
     }
 
-    fun mightDown(view : View){
+    fun mightDown(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentMight > 0 && !isDead ){
             currentMight--
         } else {
@@ -196,13 +193,13 @@ class CharacterActivity : AppCompatActivity() {
         img_cv_might.setImageDrawable(getImageResourceByName("health_bltr_$currentMight"))
     }
 
-    fun sanityUp(view : View){
+    fun sanityUp(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentSanity < 7 && !isDead ) currentSanity++
         tv_cv_sanity.text = sanityArray[currentSanity].toString()
         img_cv_sanity.setImageDrawable(getImageResourceByName("health_brtl_$currentSanity"))
     }
 
-    fun sanityDown(view : View){
+    fun sanityDown(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentSanity > 0 && !isDead ){
             currentSanity--
         } else {
@@ -212,13 +209,13 @@ class CharacterActivity : AppCompatActivity() {
         img_cv_sanity.setImageDrawable(getImageResourceByName("health_brtl_$currentSanity"))
     }
 
-    fun knowledgeUp(view : View){
+    fun knowledgeUp(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentKnowledge < 7 && !isDead ) currentKnowledge++
         tv_cv_knowledge.text = knowledgeArray[currentKnowledge].toString()
         img_cv_knowledge.setImageDrawable(getImageResourceByName("health_bltr_$currentKnowledge"))
     }
 
-    fun knowledgeDown(view : View){
+    fun knowledgeDown(@Suppress("UNUSED_PARAMETER")view : View){
         if( currentKnowledge > 0 && !isDead ){
             currentKnowledge--
         } else {
@@ -228,7 +225,7 @@ class CharacterActivity : AppCompatActivity() {
         img_cv_knowledge.setImageDrawable(getImageResourceByName("health_bltr_$currentKnowledge"))
     }
 
-    fun toggleAmulet(view: View){
+    fun toggleAmulet(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("amulet") ?: return
@@ -236,7 +233,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleBell(view: View){
+    fun toggleBell(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("bell") ?: return
@@ -244,7 +241,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleBook(view: View){
+    fun toggleBook(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("book") ?: return
@@ -252,7 +249,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleDog(view: View){
+    fun toggleDog(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("dog") ?: return
@@ -260,7 +257,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleGirl(view: View){
+    fun toggleGirl(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("girl") ?: return
@@ -268,7 +265,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleSymbol(view: View){
+    fun toggleSymbol(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("symbol") ?: return
@@ -276,7 +273,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleLocket(view: View){
+    fun toggleLocket(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("locket") ?: return
@@ -284,7 +281,7 @@ class CharacterActivity : AppCompatActivity() {
         toggleItem(item, index)
     }
 
-    fun toggleMadman(view: View){
+    fun toggleMadman(@Suppress("UNUSED_PARAMETER")view: View){
         if( isDead ) return
 
         val item : BetrayalStatItem = items.get("madman") ?: return
@@ -298,23 +295,23 @@ class CharacterActivity : AppCompatActivity() {
         if (!inventory[index]){
             builder.setMessage("Pick up ${item.name}?\r\nSpeed: ${item.upSpeed}\r\n" +
                     "Might: ${item.upMight}\r\nSanity: ${item.upSanity}\r\nKnowledge: ${item.upKnowledge}")
-            builder.setPositiveButton("YES"){dialog, which -> run{
+            builder.setPositiveButton("YES"){_, _ -> run{
                 changeStats(item.upSpeed, item.upMight, item.upSanity, item.upKnowledge)
                 inventory[index] = true}
             }
         } else {
             builder.setMessage("Drop ${item.name}?\r\nSpeed: ${item.downSpeed}\r\n" +
                     "Might: ${item.downMight}\r\nSanity: ${item.downSanity}\r\nKnowledge: ${item.downKnowledge}")
-            builder.setPositiveButton("YES"){dialog, which -> run{
+            builder.setPositiveButton("YES"){_, _ -> run{
                 changeStats(item.downSpeed, item.downMight, item.downSanity, item.downKnowledge)
                 inventory[index] = false}
             }
         }
-        builder.setNegativeButton("NO"){dialog, which -> null }
+        builder.setNegativeButton("NO"){_, _ -> null }
 
         val dialog: AlertDialog = builder.create()
-        dialog.setOnShowListener( { dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(resources.getColor(R.color.characterColorBlack))
-            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(resources.getColor(R.color.characterColorBlack))})
+        dialog.setOnShowListener{ dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor( this, R.color.characterColorBlack))
+            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor( this, R.color.characterColorBlack))}
         dialog.show()
         when( item.type.ordinal ){
             BetrayalStatItem.ITEMTYPE.ITEM.ordinal -> dialog.window.decorView.background.colorFilter = LightingColorFilter(colorMul, itemColor)
@@ -401,12 +398,12 @@ class CharacterActivity : AppCompatActivity() {
         img_cv_knowledge.setImageDrawable(getImageResourceByName("health_bltr_$currentKnowledge"))
     }
 
-    fun manualReset(view : View){
+    fun manualReset(@Suppress("UNUSED_PARAMETER")view : View){
         val builder = AlertDialog.Builder(this@CharacterActivity)
         builder.setTitle("Reset Character?")
         builder.setMessage("Are you sure you want to reset your stats?")
-        builder.setPositiveButton("YES"){dialog, which -> resetCharacter() }
-        builder.setNegativeButton("NO"){dialog, which -> null }
+        builder.setPositiveButton("YES"){_, _ -> resetCharacter() }
+        builder.setNegativeButton("NO"){_, _ -> null }
 
         val dialog: AlertDialog = builder.create()
         dialog.show()

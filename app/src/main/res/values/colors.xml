@@ -12,4 +12,6 @@
     <color name="characterColorGreen">#228822</color>
     <color name="characterColorBlue">#3300BB</color>
     <color name="characterColorPurple">#660099</color>
+    <color name="itemColor">#FFC37E2D</color>
+    <color name="omenColor">#FF3C6024</color>
 </resources>

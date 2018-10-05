@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showCharacter(view: View){
-        if( view is TTImageButton ){
+        if( view is TTButton ){
             val characterIntent = Intent(this, CharacterActivity::class.java)
             characterIntent.putExtra(CharacterActivity.CHARACTER_CODE, view.mCharacterCode)
             startActivity(characterIntent)
